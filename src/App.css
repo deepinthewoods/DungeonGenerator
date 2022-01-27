@@ -13,19 +13,168 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.roomColor0 {
+  background-color: transparent;
+  background-clip: border-box;
+
+}
+.roomColor1 {
+  background-color: grey;
+  background-clip: border-box;
+}
+.roomColor2 {
+  background-color: ghostwhite;
+  background-clip: border-box;
+}
+.roomColor3 {
+  background-color: ivory;
+  background-clip: border-box;
+}
+.roomColor4 {
+  background-color: lightsteelblue;
+  background-clip: border-box;
+}
+.roomColor5 {
+  background-color: lightpink;
+  background-clip: border-box;
+}
+
+.roomColor6 {
+  background-color: lightcoral;
+  background-clip: border-box;
+}
+.roomColor7 {
+  background-color: lightskyblue;
+  background-clip: border-box;
+}
+
+:root {
+  --tile-size: 1rem;
+}
+
+.tilebase {
+  border-color: black;
+  border-style: solid;
+  display: inline-block;
+  /* position: relative; */
+  /* background-color: green; */
+}
+
+.tile0 {
+  /* border-radius: 255px 15px 225px 15px/15px 225px 15px; */
+  /* border-radius: 50% 1.25% 120% 1.25%/ 1.25% 152% 1.25% 182%; */
+  border-radius: 9% 90% 8% 60% / 50% 7% 60% 7%;
+  border-width: 2.4px 2px 2.1px 2.6px;
+  /* background-color: transparent; */
+}
+.tile1 {
+  /* border-radius: 255px 15px 225px 15px/15px 225px 15px; */
+  /* border-radius: 1.22rem .1235rem 1.62rem .1235rem/ .1235rem 1.42rem .1235rem 1.7rem; */
+  border-radius: 90% 9% 40% 4% / 6% 80% 12% 20%;
+  border-width: 2.2px 2.2px 2.3px 2.4px;
+}
+.tile2 {
+  /* border-radius: 255px 15px 225px 15px/15px 225px 15px; */
+  /* border-radius: .12rem 1rem .12rem 1rem/ 1rem .12rem 1rem .12rem; */
+  border-radius: 5% 90% 8% 50% / 80% 8% 60% 8%;
+  border-width: 2.3px 2.3px 2px 2.5px;
+}
+.tile3 {
+  /* border-radius: 255px 15px 225px 15px/15px 225px 15px; */
+  /* border-radius: 1rem .135rem 1rem .135rem/ .135rem 1rem .135rem 1rem; */
+  border-radius: 90% 9% 80% 6% / 6% 50% 4% 90%;
+  border-width: 2.3px 2.5px 2px 2.43px;
+}
+
+
+.tiledoorT {
+  border-top-style: dashed;
+  border-top-color: chocolate;
+  border-top-width: 3px;
+}
+.tiledoorB {
+  border-bottom-style: dashed;
+  border-bottom-color: chocolate;
+  border-bottom-width: 3px;
+}
+.tiledoorL {
+  border-left-style: dashed;
+  border-left-color: chocolate;
+  border-left-width: 3px;
+}
+.tiledoorR {
+  border-right-style: dashed;
+  border-right-color: chocolate;
+  border-right-width: 3px;
+}
+.tilenoborderL {
+  border-left-color : transparent;
+}
+.tilenoborderR {
+  border-right-color: transparent;
+}
+.tilenoborderT {
+  border-top-color: transparent;
+
+}
+.tilenoborderB {
+  border-bottom-color: transparent;
+}
+
+.tile-container {
+  line-height: 0;
+  background-color: lightgrey;
+  display: inline-grid;
+  
+  
+  /* place-items: center;
+  grid-template-areas: */
+  /* align-items : stretch; */
+  /* display: flex; */
+  /* position: relative; */
+}
+
+.icon {
+  position: inherit;
+  /* color: blue; */
+  /* margin-bottom: 50; */
+  /* grid-area: inner-div; */
+  /* top: 100;
+  left: 0; */
+  z-index: 1;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
+  height: 100%;
+  /* padding: 10px 2; */
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  
+  
 }
 
 .App-link {
-  color: #61dafb;
+
+}
+
+.container {
+         
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: left;
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+.column-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+}
+.results {
+  font-size : 2rem;
+  
 }
 
 @keyframes App-logo-spin {
