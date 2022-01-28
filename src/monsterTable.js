@@ -14,6 +14,11 @@ const MonsterTable = (props) => {
     var list = [];
     var xp = 0;
     var done = false;
+    if (!props.environment){
+      console.log("no env") 
+      return
+    } 
+    
     var env = props.environment.get(props.environmentString);
     var tries = 0;
     var random = Random.create(props.seed)
