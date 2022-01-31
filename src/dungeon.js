@@ -272,6 +272,7 @@ const Dungeon = (props) => {
     const [doorMasks, setDoorMasks] = React.useState(null)
     const [drawMasks, setDrawMasks] = React.useState(null)
     const [icons, setIcons] = React.useState(null)
+    const [selectedRoom, setSelectedRoom] = React.useState(0)
     //const [grid, setGrid] = React.useState(new PF.grid(props.width, props.height))
     
     React.useEffect(() => {
@@ -376,6 +377,10 @@ const Dungeon = (props) => {
     var allTiles = []
     const rand = random.create(props.seed)
 
+    let onSelectRoom = (id) => {
+        setSelectedRoom(id)
+    }
+
     for (var y = 0; y < height; y++){
         var row = [];
         var w = props.width
@@ -434,7 +439,7 @@ const Dungeon = (props) => {
             var icon = getTile(x, y, w, icons)
             if (icon & ICON_ROOM_NUMBER){
                 const roomID = tile;
-                iconElements.push(<button className="icon" roomID = {tile} onClick = { () => {console.log(roomID)}}>{tile}</button>)
+                iconElements.push(<div className="icon" roomID = {tile} >{tile}</div>)
             }
 
             // const Icon = styled.span`
@@ -448,7 +453,7 @@ const Dungeon = (props) => {
             allTiles.push
             (<Tile width={props.width}
                 className={className}
-                x = {x} y = {y} w = {w} doorMasks= {doorMasks} setDoorMasks= {setDoorMasks} setTile = {setTile}
+                x = {x} y = {y} w = {w} doorMasks= {doorMasks} setDoorMasks= {setDoorMasks} setTile = {setTile} tiles= {tiles} onSelectRoom = {onSelectRoom}
 
                 >{iconElements} </Tile>)
         }
@@ -463,7 +468,15 @@ const Dungeon = (props) => {
 `
     //var tileSize = 1/props.width;
    //tileEntries
-    return <Div className="tile-container" width= {props.width} height={props.height}>{allTiles}</Div>
+    return <div>
+        <Div className="tile-container" width= {props.width} height={props.height}>
+        
+        {allTiles}
+       
+    
+        </Div>
+        {props.encounterGenerators[selectedRoom]}
+        </div>
 }
 
 export default Dungeon

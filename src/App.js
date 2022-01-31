@@ -4,6 +4,7 @@ import Dungeon from './dungeon'
 import MonsterGenerator from './monsterGenerator'
 import Papa from 'papaparse'
 import React from 'react'
+import {Route, Routes, Link} from 'react-router-dom'
 
 function App() {
 
@@ -77,14 +78,91 @@ function App() {
     // setInterval(() => {console.log(rows)}, 2000)
     }, []) // [] means just do this once, after initial render
 
+    const [maxMonsters, setMaxMonsters] = React.useState(10)
+    const [difficulty, setDifficulty] = React.useState(1)
+    const [compensate, setCompensate] = React.useState( true)
+    const [seed, setSeed] = React.useState(111)
+    const [players, setPlayers] = React.useState(4)
+    const [playerLevel, setPlayerLevel] = React.useState(1)
+    const [charLevels, setCharLevels] = React.useState([1, 1, 1, 1])
+    const [environmentString, setEnvironmentString] = React.useState("forest")
+
+    const generate = () => {
+      setSeed(Math.floor(Math.random() * 100000))
+    }
+  const encounterGenerators = []
+  for (let i = 0; i < 10; i++){
+    encounterGenerators.push(
+      <MonsterGenerator  environment = {environment} environmentString = {environmentString} 
+      compensate= {compensate} seed= {seed+i}  
+      players= {players} playerLevel= {playerLevel} key={i}/>
+      )
+  }
+
   return (
+
     <div className="App">
       <header className="App-header">
-      Dungeon Generator 
+      
       </header>
+      <Routes>
+        <Route path="/" element= {
+        <div>
+          <div>
+            Players: <input type="number" min="1" max="20" value={players} onChange = {(event) => {setPlayers(event.target.value); }}/>
+            x Level <input type="number" min="1" max="20" value={playerLevel} onChange = {(event) => {setPlayerLevel(event.target.value);}}/>
+            </div>
+            <div>
+                Environment
+                <select onChange= {(event) => {setEnvironmentString(event.target.value)}}>
+                    <option value="forest">Forest</option>
+                    <option value="underground">Underground</option>
+                    <option value="swamp">Swamp</option>
+                    <option value="desert">Desert</option>
+                    <option value="cave">Cave</option>
+                    <option value="dungeon">Dungeon</option>
+                    <option value="planar">Planar</option>
+                    <option value="grassland">Grassland</option>
+                    <option value="mountain">Mountain</option>
+                    <option value="ruins">Ruins</option>
+                    <option value="aquatic">Aquatic</option>
+                    <option value="urban">Urban</option>
+                    <option value="arctic">Arctic</option>
+                    <option value="coast">Coast</option>
+                    
+                </select>
+            </div>
+            <div>
+              <Link to="/dungeon">
+                  <button onClick={generate}>Generate</button>
+                </Link>
+            </div>
 
-      <Dungeon width={20} height= {20} seed={220}/>
-      <MonsterGenerator  environment = {environment}/>
+            
+
+        </div>
+        }>
+        
+        </Route>
+
+        <Route path="/dungeon" element=
+        {
+          <Dungeon width={20} height= {20} seed={220} encounterGenerators = {encounterGenerators}>
+          
+          </Dungeon>
+        }>
+        
+
+        </Route>
+
+        <Route path="/monster" element= {
+        <div></div>
+        }>
+          
+
+        </Route>
+      </Routes>
+      
 
     </div>
   );

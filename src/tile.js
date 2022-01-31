@@ -20,7 +20,7 @@ const offsetsFromMask = (mask) => {
 }
 
 
-const doorClickHandler = (x, y, w, doorMasks, setTile, setDoorMasks) => {
+const doorClickHandler = (x, y, w, doorMasks, setTile, setDoorMasks, tiles, onSelectRoom) => {
     // var x = e.target.getAttribute("x")
     // var y = e.target.getAttribute("y")
     // var w = e.target.getAttribute("w")
@@ -30,6 +30,9 @@ const doorClickHandler = (x, y, w, doorMasks, setTile, setDoorMasks) => {
     var newDoorMasks = doorMasks.map((e) => e)
     var offsets = offsetsFromMask(door)
     offsets.push([0, 0])
+    let tile = getTile(x, y, w, tiles)
+    console.log("tile " + tile)
+    onSelectRoom(tile);
     
     if (door & DISABLED){
         
@@ -57,7 +60,7 @@ const Span = styled.span`
 `
 
 const tile = (props) => {
-    return <Span width={props.width} className={props.className} onClick={() => {doorClickHandler(props.x, props.y, props.width, props.doorMasks, props.setTile, props.setDoorMasks)}}>{props.children}</Span>
+    return <Span width={props.width} className={props.className} onClick={() => {doorClickHandler(props.x, props.y, props.width, props.doorMasks, props.setTile, props.setDoorMasks, props.tiles, props.onSelectRoom)}}>{props.children}</Span>
 }
 
 export default tile

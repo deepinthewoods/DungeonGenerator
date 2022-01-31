@@ -29,15 +29,28 @@ const MonsterGenerator = (props) => {
         , [2800, 5700, 8500, 12700]//20
     ]
     
-    const [compensate, setCompensate] = React.useState( true)
-    const [seed, setSeed] = React.useState(111)
-    const [players, setPlayers] = React.useState(4)
-    const [playerLevel, setPlayerLevel] = React.useState(1)
-    const [charLevels, setCharLevels] = React.useState([1, 1, 1, 1])
-    const [environmentString, setEnvironmentString] = React.useState("forest")
+    const [compensate, setCompensate] = React.useState( props.compensate)
+    const [seed, setSeed] = React.useState(props.seed)
+    const [players, setPlayers] = React.useState(props.players)
+    const [playerLevel, setPlayerLevel] = React.useState(props.playerLevel)
+    const [charLevels, setCharLevels] = React.useState([1,1,1,1])
+    const [environmentString, setEnvironmentString] = React.useState(props.environmentString)
+    const [maxMonsters, setMaxMonsters] = React.useState(10)
+    const [difficulty, setDifficulty] = React.useState(1)
     //from https://makeaskillcheck.com/5e-how-does-cr-work/
     
-    
+    React.useEffect(() => {
+        //console.log("change params")
+        setCompensate(props.compensate)
+        setSeed(props.seed)
+        setPlayers(props.players)
+        setPlayerLevel(props.playerLevel)
+        //setCharLevels(props.charLevels)
+        setEnvironmentString(props.environmentString)
+        
+       
+    }
+        , [props.compensate, props.seed, props.players, props.playerLevel, props.charLevels, props.environmentString, props.maxMonsters, props.difficulty])
     
     const environment = props.environment
 
@@ -63,8 +76,7 @@ const MonsterGenerator = (props) => {
         //console.log(" ")
     }
 //    
-    const [maxMonsters, setMaxMonsters] = React.useState(10)
-    const [difficulty, setDifficulty] = React.useState(1)
+    
 
     const generate = () => {
         setSeed(Math.floor(Math.random() * 100000))
@@ -96,7 +108,7 @@ const MonsterGenerator = (props) => {
 
             <div>
                 Environment
-                <select onChange= {(event) => {setEnvironmentString(event.target.value)}}>
+                <select onChange= {(event) => {setEnvironmentString(event.target.value)} } value={environmentString}>
                     <option value="forest">Forest</option>
                     <option value="underground">Underground</option>
                     <option value="swamp">Swamp</option>

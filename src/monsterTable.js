@@ -4,7 +4,7 @@ import React from 'react'
 import Random from 'random-seed'
 
 const MonsterTable = (props) => {
-  console.log("draw monster table")
+  //console.log("draw monster table")
     
   const multipliers = [1, 1, 1.5, 2, 2, 2, 2, 2.5, 2.5, 2.5, 2.5, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4]
 
@@ -15,14 +15,14 @@ const MonsterTable = (props) => {
     var xp = 0;
     var done = false;
     if (!props.environment){
-      console.log("no env") 
+      //console.log("no env") 
       return
     } 
     
     var env = props.environment.get(props.environmentString);
     var tries = 0;
     var random = Random.create(props.seed)
-    console.log("recalc list" +props.environmentString)
+    //console.log("recalc list" +props.environmentString)
   
     while (env && !done && tries++ < 10000){
       var index = random(env.length)
