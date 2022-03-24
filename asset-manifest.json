@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/dungeongen/static/css/main.69262def.chunk.css",
-    "main.js": "/dungeongen/static/js/main.55c58d18.chunk.js",
-    "main.js.map": "/dungeongen/static/js/main.55c58d18.chunk.js.map",
-    "runtime-main.js": "/dungeongen/static/js/runtime-main.bfa2de86.js",
-    "runtime-main.js.map": "/dungeongen/static/js/runtime-main.bfa2de86.js.map",
-    "static/js/2.9b65ec23.chunk.js": "/dungeongen/static/js/2.9b65ec23.chunk.js",
-    "static/js/2.9b65ec23.chunk.js.map": "/dungeongen/static/js/2.9b65ec23.chunk.js.map",
-    "static/js/3.ea193e43.chunk.js": "/dungeongen/static/js/3.ea193e43.chunk.js",
-    "static/js/3.ea193e43.chunk.js.map": "/dungeongen/static/js/3.ea193e43.chunk.js.map",
-    "index.html": "/dungeongen/index.html",
-    "static/css/main.69262def.chunk.css.map": "/dungeongen/static/css/main.69262def.chunk.css.map",
-    "static/js/2.9b65ec23.chunk.js.LICENSE.txt": "/dungeongen/static/js/2.9b65ec23.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/dungeongen/static/media/logo.6ce24c58.svg"
+    "main.css": "/DungeonGenerator/static/css/main.69262def.chunk.css",
+    "main.js": "/DungeonGenerator/static/js/main.55c58d18.chunk.js",
+    "main.js.map": "/DungeonGenerator/static/js/main.55c58d18.chunk.js.map",
+    "runtime-main.js": "/DungeonGenerator/static/js/runtime-main.01fb38bb.js",
+    "runtime-main.js.map": "/DungeonGenerator/static/js/runtime-main.01fb38bb.js.map",
+    "static/js/2.dfa63eaf.chunk.js": "/DungeonGenerator/static/js/2.dfa63eaf.chunk.js",
+    "static/js/2.dfa63eaf.chunk.js.map": "/DungeonGenerator/static/js/2.dfa63eaf.chunk.js.map",
+    "static/js/3.ea193e43.chunk.js": "/DungeonGenerator/static/js/3.ea193e43.chunk.js",
+    "static/js/3.ea193e43.chunk.js.map": "/DungeonGenerator/static/js/3.ea193e43.chunk.js.map",
+    "index.html": "/DungeonGenerator/index.html",
+    "static/css/main.69262def.chunk.css.map": "/DungeonGenerator/static/css/main.69262def.chunk.css.map",
+    "static/js/2.dfa63eaf.chunk.js.LICENSE.txt": "/DungeonGenerator/static/js/2.dfa63eaf.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/DungeonGenerator/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.bfa2de86.js",
-    "static/js/2.9b65ec23.chunk.js",
+    "static/js/runtime-main.01fb38bb.js",
+    "static/js/2.dfa63eaf.chunk.js",
     "static/css/main.69262def.chunk.css",
     "static/js/main.55c58d18.chunk.js"
   ]
