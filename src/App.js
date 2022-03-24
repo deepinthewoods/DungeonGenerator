@@ -90,14 +90,7 @@ function App() {
     const generate = () => {
       setSeed(Math.floor(Math.random() * 100000))
     }
-  const encounterGenerators = []
-  for (let i = 0; i < 10; i++){
-    encounterGenerators.push(
-      <MonsterGenerator  environment = {environment} environmentString = {environmentString} 
-      compensate= {compensate} seed= {seed+i}  
-      players= {players} playerLevel= {playerLevel} key={i}/>
-      )
-  }
+  
 
   return (
 
@@ -147,7 +140,7 @@ function App() {
 
         <Route path="/dungeon" element=
         {
-          <Dungeon width={20} height= {20} seed={220} encounterGenerators = {encounterGenerators}>
+          <Dungeon width={20} height= {20} seed={220}>
           
           </Dungeon>
         }>
@@ -156,7 +149,11 @@ function App() {
         </Route>
 
         <Route path="/monster" element= {
-        <div></div>
+        <div>
+           <MonsterGenerator  environment = {environment} environmentString = {environmentString} 
+            compensate= {compensate} seed= {seed}  
+            players= {players} playerLevel= {playerLevel}/>
+        </div>
         }>
           
 

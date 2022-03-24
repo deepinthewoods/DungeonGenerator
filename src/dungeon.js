@@ -466,8 +466,6 @@ const Dungeon = (props) => {
     grid-template-rows: repeat(${(props) => props.width}, 1fr);
     grid-template-columns: repeat(${(props) => props.height}, 1fr);
 `
-    //var tileSize = 1/props.width;
-   //tileEntries
     return <div>
         <Div className="tile-container" width= {props.width} height={props.height}>
         
@@ -475,7 +473,7 @@ const Dungeon = (props) => {
        
     
         </Div>
-        {props.encounterGenerators[selectedRoom]}
+       
         </div>
 }
 

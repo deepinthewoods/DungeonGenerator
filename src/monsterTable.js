@@ -22,7 +22,7 @@ const MonsterTable = (props) => {
     var env = props.environment.get(props.environmentString);
     var tries = 0;
     var random = Random.create(props.seed)
-    //console.log("recalc list" +props.environmentString)
+    console.log("recalc list" + props.seed)
   
     while (env && !done && tries++ < 10000){
       var index = random(env.length)
@@ -62,7 +62,7 @@ const MonsterTable = (props) => {
     }
     setXP(xp)
     setList(list)
-  }, [ props.xpTargets, props.seed, props.max, props.environmentString]);
+  }, [ props.seed]);//[ props.xpTargets[0], props.seed, props.max, props.environmentString]);
 
   const copyMonster = (e) => {
     const newList = list.map((el) => {
